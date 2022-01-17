@@ -8,6 +8,10 @@ import calc from "./moduls/calc";
 import changeModalState from './moduls/changeModalState';
 import imageFilter from './moduls/imageFilter';
 import changeImage from './moduls/changeImageOnHover';
+import accordion from "./moduls/accordion";
+import burger from "./moduls/burger";
+
+
 
 window.addEventListener('DOMContentLoaded', function () {
     'use strict';
@@ -27,5 +31,7 @@ window.addEventListener('DOMContentLoaded', function () {
     showMoreStylesWithDB('.button-styles', '#styles .row');
     calc("#size", "#material", "#options", ".promocode", ".calc-price");
     imageFilter('#portfolio', '.portfolio-menu li', '.portfolio-block', 'active', '.portfolio-no');
-    changeImage('.sizes-wrapper', '.sizes-block')
+    changeImage('.sizes-wrapper', '.sizes-block');
+    accordion('.accordion-heading', '.accordion-block');
+    burger('.burger', '.burger-menu');
 });

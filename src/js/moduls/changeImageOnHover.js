@@ -1,7 +1,6 @@
 const changeImage = (blockSelector, elementSelector) => {
     let block = document.querySelector(blockSelector),
-        elements = document.querySelectorAll(elementSelector),
-        src, newSrc;
+        elements = document.querySelectorAll(elementSelector);
 
     block.addEventListener('mouseover', (e) => {
 
@@ -9,17 +8,11 @@ const changeImage = (blockSelector, elementSelector) => {
             if (e.target && e.target.parentNode == elem) {
 
                 let image = elem.querySelector('img');
-                let spans = elem.querySelectorAll('p');
+                let spans = elem.querySelectorAll('p:not(.sizes-hit)');
 
-                src = image.getAttribute('src');
-                newSrc = (src.replace(/.png/ig, '-1.png'));
-                image.setAttribute('src', newSrc);
-
+                image.setAttribute('src', image.src.slice(0, -4) + '-1.png');
                 spans.forEach(item => {
                     item.style.display = 'none';
-                    if (item.classList.contains('sizes-hit')) {
-                        item.style.display = 'block';
-                    }
                 })
 
             }
@@ -34,7 +27,8 @@ const changeImage = (blockSelector, elementSelector) => {
                 let image = elem.querySelector('img');
                 let spans = elem.querySelectorAll('p');
 
-                image.setAttribute('src', src);
+                image.setAttribute('src', image.src.replace('-1.png', '.png'));
+
                 spans.forEach(item => {
                     item.style.display = 'block';
                 })
