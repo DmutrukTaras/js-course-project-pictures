@@ -29,6 +29,7 @@ const sliders = (slides, dir, prev, next) => {
 
         prevBtn.addEventListener('click', () => {
             plusSlide(-1);
+
             items[slideIndex - 1].classList.remove('slideInLeft');
             items[slideIndex - 1].classList.add('slideInRight');
         });
