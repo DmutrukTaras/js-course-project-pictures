@@ -10,6 +10,8 @@ import imageFilter from './moduls/imageFilter';
 import changeImage from './moduls/changeImageOnHover';
 import accordion from "./moduls/accordion";
 import burger from "./moduls/burger";
+import scrolling from "./moduls/scrolling";
+import drop from "./moduls/drop";
 
 
 
@@ -34,4 +36,6 @@ window.addEventListener('DOMContentLoaded', function () {
     changeImage('.sizes-wrapper', '.sizes-block');
     accordion('.accordion-heading', '.accordion-block');
     burger('.burger', '.burger-menu');
+    scrolling('.pageup');
+    drop();
 });
